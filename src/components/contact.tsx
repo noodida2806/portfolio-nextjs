@@ -4,6 +4,7 @@ import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
+import { useLanguage } from "@/context/language-context";
 import { sendEmail } from "@/actions/sendEmail";
 import toast from "react-hot-toast";
 import SubmitBtn from "./button/submit-btn";
@@ -11,11 +12,13 @@ import { useForm } from "react-hook-form";
 
 const Contact = () => {
   const { ref } = useSectionInView("Contact");
+  const { t } = useLanguage();
 
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
+    reset,
   } = useForm()
 
   const onSubmit = async (data: any) => {
@@ -24,14 +27,15 @@ const Contact = () => {
       toast.error(error);
       return;
     }
-    toast.success("Email sent successfully!");
+    toast.success(t.contact.successToast);
+    reset();
   }
 
   return (
     <motion.section
       id="contact"
       ref={ref}
-      className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
+      className="mb-20 sm:mb-28 w-[min(100%,42rem)]"
       initial={{
         opacity: 0,
       }}
@@ -45,38 +49,76 @@ const Contact = () => {
         once: true,
       }}
     >
-      <SectionHeading>Contact me</SectionHeading>
+      <SectionHeading>{t.contact.heading}</SectionHeading>
 
-      <p className="text-gray-700 -mt-6 dark:text-white/80">
-        Please contact me directly at{" "}
-        <a className="underline" href="mailto:example@gmail.com">
+      <p className="text-center text-gray-700 dark:text-white/80 mb-8">
+        {t.contact.description}{" "}
+        <a className="font-semibold text-violet-600 dark:text-blue-400 hover:underline transition" href="mailto:ngodinhdai77@gmail.com">
           ngodinhdai77@gmail.com
         </a>{" "}
-        or through this form.
+        {t.contact.descriptionSuffix}
       </p>
 
       <form
-        className="mt-10 flex flex-col items-end dark:text-black"
+        className="flex flex-col gap-4"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <input
-          {...register("senderEmail", { required: true, maxLength: 500 })}
-          className="h-14 px-4 rounded-lg borderBlack dark:bg-white/50 dark:focus:bg-white/100 transition-all dark:outline-none w-full"
-          name="senderEmail"
-          type="email"
-          required
-          maxLength={500}
-          placeholder="Type your email here..."
-        />
-        <textarea
-          {...register("message", { required: true, maxLength: 5000 })}
-          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white/50 dark:focus:bg-white/100 transition-all dark:outline-none w-full"
-          name="message"
-          placeholder="Type your message here..."
-          required
-          maxLength={5000}
-        />
-        <SubmitBtn pending={isSubmitting} />
+        <motion.div
+          className="flex flex-col gap-2"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.1 }}
+          viewport={{ once: true }}
+        >
+          <label className="text-sm font-semibold text-gray-700 dark:text-white/80">
+            {t.contact.emailLabel}
+          </label>
+          <input
+            {...register("senderEmail", { required: true, maxLength: 500 })}
+            className="h-12 px-4 rounded-lg border-2 border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white/40 focus:border-violet-500 dark:focus:border-blue-400 focus:outline-none transition-colors duration-300"
+            name="senderEmail"
+            type="email"
+            required
+            maxLength={500}
+            placeholder={t.contact.emailPlaceholder}
+          />
+          {errors.senderEmail && (
+            <span className="text-xs text-red-500">{t.contact.emailRequired}</span>
+          )}
+        </motion.div>
+
+        <motion.div
+          className="flex flex-col gap-2"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <label className="text-sm font-semibold text-gray-700 dark:text-white/80">
+            {t.contact.messageLabel}
+          </label>
+          <textarea
+            {...register("message", { required: true, maxLength: 5000 })}
+            className="h-40 px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white/40 focus:border-violet-500 dark:focus:border-blue-400 focus:outline-none transition-colors duration-300 resize-none"
+            name="message"
+            placeholder={t.contact.messagePlaceholder}
+            required
+            maxLength={5000}
+          />
+          {errors.message && (
+            <span className="text-xs text-red-500">{t.contact.messageRequired}</span>
+          )}
+        </motion.div>
+
+        <motion.div
+          className="flex justify-end"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <SubmitBtn pending={isSubmitting} label={t.contact.submitBtn} />
+        </motion.div>
       </form>
     </motion.section>
   );

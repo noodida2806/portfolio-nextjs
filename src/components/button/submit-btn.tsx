@@ -2,10 +2,11 @@ import React from "react";
 import { FaPaperPlane } from "react-icons/fa";
 
 type Props = {
-  pending: boolean
+  pending: boolean;
+  label?: string;
 }
 
-const SubmitBtn = ({ pending }: Props) => {
+const SubmitBtn = ({ pending, label = "Submit" }: Props) => {
   return (
     <button
       type="submit"
@@ -16,7 +17,7 @@ const SubmitBtn = ({ pending }: Props) => {
         <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white" />
       ) : (
         <>
-          Submit{" "}
+          {label}{" "}
           <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />{" "}
         </>
       )}

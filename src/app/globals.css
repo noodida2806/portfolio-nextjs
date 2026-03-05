@@ -8,6 +8,7 @@
 
 html {
   --line-color: #e5e7eb;
+  scroll-behavior: smooth;
 }
 
 html.dark {
@@ -16,4 +17,32 @@ html.dark {
 
 @theme inline {
   --color-line: var(--line-color);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-violet-600 to-blue-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply from-violet-500 to-blue-400;
+}
+
+/* Gradient text utility */
+@layer utilities {
+  .bg-gradient-to-r-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
+  }
 }

@@ -3,11 +3,13 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/theme/theme-provider";
 import ActiveSectionContextProvider from "@/context/active-section-context";
+import LanguageProvider from "@/context/language-context";
 import ThemeSwitch from "@/components/button/switch-theme";
+import LanguageSwitcher from "@/components/language-switcher";
 import { Toaster } from "react-hot-toast";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import Script from "next/script";
+import ScrollToTop from "@/components/button/scroll-to-top";
 
 const isInterFont = Inter({
   variable: "--font-inter",
@@ -31,20 +33,26 @@ export default function RootLayout({
       >
         <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]" />
         <div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]" />
-        <ActiveSectionContextProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem={true}
-            disableTransitionOnChange
-          >
-            <Header />
-            {children}
-            <Footer />
-            <Toaster position="top-right" />
-            <ThemeSwitch />
-          </ThemeProvider>
-        </ActiveSectionContextProvider>
+        <LanguageProvider>
+          <ActiveSectionContextProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem={true}
+              disableTransitionOnChange
+            >
+              <Header />
+              {children}
+              <Footer />
+              <Toaster position="top-right" />
+              <div className="fixed bottom-5 right-5 flex flex-col gap-3 z-[998]">
+                <ScrollToTop />
+                <LanguageSwitcher />
+                <ThemeSwitch />
+              </div>
+            </ThemeProvider>
+          </ActiveSectionContextProvider>
+        </LanguageProvider>
       </body>
     </html>
   );
