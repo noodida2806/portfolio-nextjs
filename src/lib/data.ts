@@ -50,6 +50,7 @@ export const experiencesData = [
   },
   {
     title: "Front-End Developer Intern",
+    company: "Arrowhead Technology",
     location: "Ho Chi Minh City, Vietnam",
     description:
       "Completed an internship as a Front-End Developer, gaining hands-on experience with modern web technologies and contributing to real-world projects.",
@@ -58,14 +59,16 @@ export const experiencesData = [
   },
   {
     title: "Full-Stack Developer",
+    company: "Freelance",
     location: "Ho Chi Minh City, Vietnam",
     description:
-      "Currently working as a freelance Full-Stack Developer. My stack includes React, Remix, TypeScript, Tailwind, PostgreSQL and Refine. Open to full-time opportunities to grow and contribute to impactful projects.",
+      "Worked as a freelance Full-Stack Developer building the Digiplay gaming platform. Stack includes React, Remix, TypeScript, Tailwind, PostgreSQL and Refine.",
     icon: React.createElement(FaReact),
     date: "08/2024 - 08/2025",
   },
   {
     title: "Front-End Developer",
+    company: "NTQ Solution",
     location: "Ho Chi Minh City, Vietnam",
     description:
       "Worked as a Front-End Developer, focusing on building responsive and user-friendly web applications. During this time, I also expanded my skills toward full-stack development.",
@@ -94,7 +97,7 @@ export const projectsData = [
   },
   {
     title: "Blog Website",
-    link: "https://github.com/noodida2806/fe-job-application.git",
+    link: "https://github.com/noodida2806",
     description:
       "Developed a blog website with a clean design, allowing users to read and comment on articles, and an admin panel for content management.",
     tech: [SKILLNAME.NEXTJS, SKILLNAME.TAILWIND, SKILLNAME.TYPESCRIPT, SKILLNAME.POSTGRESQL, SKILLNAME.ZUSTAND, SKILLNAME.NESTJS],
@@ -102,7 +105,7 @@ export const projectsData = [
   },
   {
     title: "E-commerce Website",
-    link: "https://github.com/noodida2806/fe-job-application.git",
+    link: "https://github.com/noodida2806",
     description:
       "Created an e-commerce website with product listings, a shopping cart, and a secure checkout process, enhancing the online shopping experience.",
     tech: [SKILLNAME.NEXTJS, SKILLNAME.TAILWIND, SKILLNAME.TYPESCRIPT, SKILLNAME.POSTGRESQL, SKILLNAME.ZUSTAND, SKILLNAME.NESTJS],
@@ -254,7 +257,7 @@ export const skillDatas = [
 ];
 
 export const introLinks = {
-  avatar: "/avatar.JPG",
+  avatar: "/avatar.jpg",
   linkedin: "https://www.linkedin.com/in/dai-ngo-dinh-55a9a6203/",
   github: "https://github.com/noodida2806",
   cv: "/cv/CV_FE_NgoDinhDai.pdf",

@@ -18,7 +18,31 @@ const isInterFont = Inter({
 
 export const metadata: Metadata = {
   title: "Noo DiDa | Personal Portfolio",
-  description: "A full-stack developer with 3 years of experience in building web applications.",
+  description: "A full-stack developer with 3+ years of experience in building modern web and mobile applications.",
+  keywords: ["Full-Stack Developer", "React", "Next.js", "TypeScript", "Node.js", "Portfolio"],
+  authors: [{ name: "Ngo Dinh Dai" }],
+  openGraph: {
+    title: "Noo DiDa | Personal Portfolio",
+    description: "A full-stack developer with 3+ years of experience in building modern web and mobile applications.",
+    url: "https://noodida.dev",
+    siteName: "Noo DiDa Portfolio",
+    images: [
+      {
+        url: "/avatar.jpg",
+        width: 384,
+        height: 384,
+        alt: "Noo DiDa - Full Stack Developer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Noo DiDa | Personal Portfolio",
+    description: "A full-stack developer with 3+ years of experience in building modern web and mobile applications.",
+    images: ["/avatar.jpg"],
+  },
 };
 
 export default function RootLayout({

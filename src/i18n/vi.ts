@@ -35,25 +35,25 @@ const vi: Dictionary = {
         icon: "\u{1F4BB}",
         title: "L\u1eadp tr\u00ecnh vi\u00ean Front-End",
         description:
-          "X\u00e2y d\u1ef1ng \u1ee9ng d\u1ee5ng web hi\u1ec7n \u0111\u1ea1i v\u00e0 responsive v\u1edbi React, Next.js, TypeScript v\u00e0 Tailwind CSS. T\u1ea1o tr\u1ea3i nghi\u1ec7m web s\u1ea1ch, hi\u1ec7u su\u1ea5t cao v\u00e0 d\u1ec5 truy c\u1eadp.",
+          "3+ n\u0103m x\u00e2y d\u1ef1ng \u1ee9ng d\u1ee5ng web hi\u1ec7n \u0111\u1ea1i, responsive v\u1edbi React, Next.js, TypeScript v\u00e0 Tailwind CSS. T\u1eadp trung v\u00e0o tr\u1ea3i nghi\u1ec7m ng\u01b0\u1eddi d\u00f9ng s\u1ea1ch \u0111\u1eb9p v\u00e0 hi\u1ec7u su\u1ea5t cao.",
       },
       {
         icon: "\u{1F527}",
         title: "Ph\u00e1t tri\u1ec3n Back-End",
         description:
-          "C\u00f3 kinh nghi\u1ec7m v\u1edbi Node.js, Express.js, RESTful APIs v\u00e0 Java Spring Boot. L\u00e0m vi\u1ec7c v\u1edbi MongoDB, MySQL, PostgreSQL v\u00e0 ORM nh\u01b0 Prisma.",
+          "C\u00f3 kinh nghi\u1ec7m v\u1edbi Node.js, NestJS, Express.js, RESTful APIs v\u00e0 Java Spring Boot. L\u00e0m vi\u1ec7c v\u1edbi MongoDB, MySQL, PostgreSQL v\u00e0 ORM nh\u01b0 Prisma.",
       },
       {
         icon: "\u{1F4F1}",
         title: "Ph\u00e1t tri\u1ec3n Mobile",
         description:
-          "T\u1ea1o \u1ee9ng d\u1ee5ng di \u0111\u1ed9ng \u0111a n\u1ec1n t\u1ea3ng b\u1eb1ng React Native v\u1edbi tr\u1ea3i nghi\u1ec7m ng\u01b0\u1eddi d\u00f9ng li\u1ec1n m\u1ea1ch tr\u00ean c\u1ea3 iOS v\u00e0 Android.",
+          "X\u00e2y d\u1ef1ng \u1ee9ng d\u1ee5ng di \u0111\u1ed9ng \u0111a n\u1ec1n t\u1ea3ng b\u1eb1ng React Native, mang l\u1ea1i tr\u1ea3i nghi\u1ec7m m\u01b0\u1ee3t m\u00e0 tr\u00ean c\u1ea3 iOS v\u00e0 Android.",
       },
       {
         icon: "\u{1F433}",
         title: "DevOps & C\u00f4ng c\u1ee5",
         description:
-          "Hi\u1ec3u bi\u1ebft v\u1eefng v\u1ec1 Docker cho \u1ee9ng d\u1ee5ng container h\u00f3a v\u00e0 th\u00e0nh th\u1ea1o Git cho qu\u1ea3n l\u00fd phi\u00ean b\u1ea3n v\u00e0 ph\u00e1t tri\u1ec3n c\u1ed9ng t\u00e1c.",
+          "Th\u00e0nh th\u1ea1o Docker, Git, GitHub Actions CI/CD, Jira v\u00e0 Postman. C\u00f3 kinh nghi\u1ec7m tri\u1ec3n khai v\u00e0 duy tr\u00ec \u1ee9ng d\u1ee5ng container h\u00f3a.",
       },
     ],
     outro:
@@ -112,9 +112,9 @@ const vi: Dictionary = {
       },
       {
         title: "Full-Stack Developer",
-        location: "TP. H\u1ed3 Ch\u00ed Minh, Vi\u1ec7t Nam",
+        location: "Freelance · TP. H\u1ed3 Ch\u00ed Minh, Vi\u1ec7t Nam",
         description:
-          "\u0110ang l\u00e0m vi\u1ec7c nh\u01b0 Full-Stack Developer freelance. Stack c\u1ee7a t\u00f4i g\u1ed3m React, Remix, TypeScript, Tailwind, PostgreSQL v\u00e0 Refine. S\u1eb5n s\u00e0ng cho c\u01a1 h\u1ed9i to\u00e0n th\u1eddi gian.",
+          "L\u00e0m vi\u1ec7c nh\u01b0 Full-Stack Developer freelance, x\u00e2y d\u1ef1ng n\u1ec1n t\u1ea3ng game Digiplay. Stack g\u1ed3m React, Remix, TypeScript, Tailwind, PostgreSQL v\u00e0 Refine.",
       },
       {
         title: "Front-End Developer",

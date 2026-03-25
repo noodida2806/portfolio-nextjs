@@ -33,25 +33,25 @@ const en = {
         icon: "\u{1F4BB}",
         title: "Front-End Developer",
         description:
-          "Building modern and responsive web applications with React, Next.js, TypeScript, and Tailwind CSS. Creating clean, performant, and accessible web experiences.",
+          "3+ years building modern, responsive web applications with React, Next.js, TypeScript, and Tailwind CSS. Focused on clean, performant, and accessible user experiences.",
       },
       {
         icon: "\u{1F527}",
         title: "Back-End Development",
         description:
-          "Experienced with Node.js, Express.js, RESTful APIs, and Java Spring Boot. Working with MongoDB, MySQL, PostgreSQL, and ORMs like Prisma for efficient data handling.",
+          "Experienced with Node.js, NestJS, Express.js, RESTful APIs, and Java Spring Boot. Working with MongoDB, MySQL, PostgreSQL, and ORMs like Prisma for efficient data handling.",
       },
       {
         icon: "\u{1F4F1}",
         title: "Mobile Development",
         description:
-          "Creating cross-platform mobile applications using React Native with seamless user experience across both iOS and Android.",
+          "Building cross-platform mobile applications using React Native, delivering seamless user experience across both iOS and Android.",
       },
       {
         icon: "\u{1F433}",
         title: "DevOps & Tools",
         description:
-          "Solid understanding of Docker for containerized applications and proficient with Git for version control and collaborative development.",
+          "Proficient with Docker, Git, GitHub Actions CI/CD, Jira, and Postman. Experienced in deploying and maintaining containerized applications.",
       },
     ],
     outro:
@@ -110,9 +110,9 @@ const en = {
       },
       {
         title: "Full-Stack Developer",
-        location: "Ho Chi Minh City, Vietnam",
+        location: "Freelance · Ho Chi Minh City, Vietnam",
         description:
-          "Currently working as a freelance Full-Stack Developer. My stack includes React, Remix, TypeScript, Tailwind, PostgreSQL and Refine. Open to full-time opportunities to grow and contribute to impactful projects.",
+          "Worked as a freelance Full-Stack Developer building the Digiplay gaming platform. Stack includes React, Remix, TypeScript, Tailwind, PostgreSQL and Refine.",
       },
       {
         title: "Front-End Developer",

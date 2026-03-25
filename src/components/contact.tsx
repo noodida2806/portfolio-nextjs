@@ -36,18 +36,10 @@ const Contact = () => {
       id="contact"
       ref={ref}
       className="mb-20 sm:mb-28 w-[min(100%,42rem)]"
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
     >
       <SectionHeading>{t.contact.heading}</SectionHeading>
 
@@ -59,10 +51,7 @@ const Contact = () => {
         {t.contact.descriptionSuffix}
       </p>
 
-      <form
-        className="flex flex-col gap-4"
-        onSubmit={handleSubmit(onSubmit)}
-      >
+      <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
         <motion.div
           className="flex flex-col gap-2"
           initial={{ opacity: 0, x: -30 }}
@@ -75,7 +64,7 @@ const Contact = () => {
           </label>
           <input
             {...register("senderEmail", { required: true, maxLength: 500 })}
-            className="h-12 px-4 rounded-lg border-2 border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white/40 focus:border-violet-500 dark:focus:border-blue-400 focus:outline-none transition-colors duration-300"
+            className="h-12 px-4 rounded-xl border-2 border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-white/30 focus:border-violet-500 dark:focus:border-violet-400 focus:outline-none focus:shadow-[0_0_0_4px_rgba(124,58,237,0.1)] dark:focus:shadow-[0_0_0_4px_rgba(124,58,237,0.2)] transition-all duration-200"
             name="senderEmail"
             type="email"
             required
@@ -99,7 +88,7 @@ const Contact = () => {
           </label>
           <textarea
             {...register("message", { required: true, maxLength: 5000 })}
-            className="h-40 px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white/40 focus:border-violet-500 dark:focus:border-blue-400 focus:outline-none transition-colors duration-300 resize-none"
+            className="h-40 px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-white/30 focus:border-violet-500 dark:focus:border-violet-400 focus:outline-none focus:shadow-[0_0_0_4px_rgba(124,58,237,0.1)] dark:focus:shadow-[0_0_0_4px_rgba(124,58,237,0.2)] transition-all duration-200 resize-none"
             name="message"
             placeholder={t.contact.messagePlaceholder}
             required

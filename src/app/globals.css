@@ -36,6 +36,37 @@ html.dark {
   @apply from-violet-500 to-blue-400;
 }
 
+/* Skills carousel animations */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.skills-inner {
+  display: flex;
+  width: max-content;
+}
+
+.animate-scroll-left {
+  animation: scroll-left 60s linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 60s linear infinite;
+  will-change: transform;
+}
+
+.skills-track:hover .animate-scroll-left,
+.skills-track:hover .animate-scroll-right {
+  animation-play-state: paused;
+}
+
 /* Gradient text utility */
 @layer utilities {
   .bg-gradient-to-r-text {
