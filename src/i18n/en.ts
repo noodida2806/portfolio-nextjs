@@ -149,7 +149,7 @@ const en = {
     description:
       "A full-stack developer with 3 years of experience in building web applications.",
   },
-} as const;
+};
 
 export default en;
 export type Dictionary = typeof en;
