@@ -23,7 +23,7 @@ const Projects = () => {
       viewport={{ once: true }}
     >
       <SectionHeading>{t.projects.heading}</SectionHeading>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:max-w-[56rem] mx-auto">
         {projectsData.map((project, index) => (
           <Fragment key={index}>
             <ProjectItem
