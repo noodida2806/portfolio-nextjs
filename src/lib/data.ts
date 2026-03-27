@@ -257,7 +257,7 @@ export const skillDatas = [
 ];
 
 export const introLinks = {
-  avatar: "/avatar.jpg",
+  avatar: "/anh.jpg",
   linkedin: "https://www.linkedin.com/in/dai-ngo-dinh-55a9a6203/",
   github: "https://github.com/noodida2806",
   cv: "/cv/CV_FE_NgoDinhDai.pdf",
