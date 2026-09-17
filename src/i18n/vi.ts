@@ -13,6 +13,7 @@ const vi: Dictionary = {
 
   // Intro / Hero
   intro: {
+    badge: "S\u1eb5n s\u00e0ng nh\u1eadn d\u1ef1 \u00e1n freelance",
     greeting: "Xin ch\u00e0o, t\u00f4i l\u00e0 Noo DiDa",
     roles: ["L\u1eadp tr\u00ecnh vi\u00ean Web", "L\u1eadp tr\u00ecnh vi\u00ean Mobile"],
     description: {
@@ -30,6 +31,11 @@ const vi: Dictionary = {
   // About
   about: {
     heading: "V\u1ec1 t\u00f4i",
+    stats: [
+      { value: "3+", label: "N\u0103m kinh nghi\u1ec7m" },
+      { value: "4+", label: "D\u1ef1 \u00e1n \u0111\u00e3 l\u00e0m" },
+      { value: "25+", label: "C\u00f4ng ngh\u1ec7" },
+    ],
     items: [
       {
         icon: "\u{1F4BB}",
@@ -74,17 +80,17 @@ const vi: Dictionary = {
       {
         title: "Website Tuy\u1ec3n d\u1ee5ng",
         description:
-          "X\u00e2y d\u1ef1ng website tuy\u1ec3n d\u1ee5ng v\u1edbi giao di\u1ec7n th\u00e2n thi\u1ec7n cho ng\u01b0\u1eddi t\u00ecm vi\u1ec7c v\u00e0 nh\u00e0 tuy\u1ec3n d\u1ee5ng, bao g\u1ed3m danh s\u00e1ch vi\u1ec7c l\u00e0m, \u1ee9ng tuy\u1ec3n v\u00e0 h\u1ed3 s\u01a1 c\u00f4ng ty.",
+          "N\u1ec1n t\u1ea3ng tuy\u1ec3n d\u1ee5ng k\u1ebft n\u1ed1i ng\u01b0\u1eddi t\u00ecm vi\u1ec7c v\u00e0 nh\u00e0 tuy\u1ec3n d\u1ee5ng, g\u1ed3m danh s\u00e1ch vi\u1ec7c l\u00e0m, theo d\u00f5i \u1ee9ng tuy\u1ec3n v\u00e0 trang h\u1ed3 s\u01a1 c\u00f4ng ty. Front-end b\u1eb1ng React + Redux, t\u00edch h\u1ee3p API NestJS/MongoDB.",
       },
       {
         title: "Website Blog",
         description:
-          "Ph\u00e1t tri\u1ec3n website blog v\u1edbi thi\u1ebft k\u1ebf g\u1ecdn g\u00e0ng, cho ph\u00e9p ng\u01b0\u1eddi d\u00f9ng \u0111\u1ecdc v\u00e0 b\u00ecnh lu\u1eadn b\u00e0i vi\u1ebft, c\u00f9ng trang qu\u1ea3n tr\u1ecb n\u1ed9i dung.",
+          "N\u1ec1n t\u1ea3ng xu\u1ea5t b\u1ea3n v\u1edbi b\u00e0i vi\u1ebft rich-text, b\u00ecnh lu\u1eadn ph\u00e2n c\u1ea5p v\u00e0 trang qu\u1ea3n tr\u1ecb ki\u1ec3m duy\u1ec7t n\u1ed9i dung. X\u00e2y b\u1eb1ng Next.js v\u00e0 backend NestJS/PostgreSQL, d\u00f9ng Zustand qu\u1ea3n l\u00fd state.",
       },
       {
         title: "Website Th\u01b0\u01a1ng m\u1ea1i \u0111i\u1ec7n t\u1eed",
         description:
-          "T\u1ea1o website th\u01b0\u01a1ng m\u1ea1i \u0111i\u1ec7n t\u1eed v\u1edbi danh s\u00e1ch s\u1ea3n ph\u1ea9m, gi\u1ecf h\u00e0ng v\u00e0 quy tr\u00ecnh thanh to\u00e1n an to\u00e0n, n\u00e2ng cao tr\u1ea3i nghi\u1ec7m mua s\u1eafm tr\u1ef1c tuy\u1ebfn.",
+          "C\u1eeda h\u00e0ng tr\u1ef1c tuy\u1ebfn v\u1edbi danh m\u1ee5c s\u1ea3n ph\u1ea9m, gi\u1ecf h\u00e0ng v\u00e0 quy tr\u00ecnh checkout nhi\u1ec1u b\u01b0\u1edbc an to\u00e0n. X\u00e2y b\u1eb1ng Next.js v\u00e0 backend NestJS/PostgreSQL, t\u1eadp trung v\u00e0o t\u1ed1c \u0111\u1ed9 v\u00e0 tr\u1ea3i nghi\u1ec7m mua h\u00e0ng m\u01b0\u1ee3t m\u00e0.",
       },
     ],
   },

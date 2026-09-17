@@ -1,20 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/theme/theme-provider";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import LanguageProvider from "@/context/language-context";
-import ThemeSwitch from "@/components/button/switch-theme";
-import LanguageSwitcher from "@/components/language-switcher";
 import { Toaster } from "react-hot-toast";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import ScrollToTop from "@/components/button/scroll-to-top";
-
-const isInterFont = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
+import FixedControls from "@/components/fixed-controls";
+import CursorGlow from "@/components/cursor-glow";
+import CommandPalette from "@/components/command-palette";
 
 export const metadata: Metadata = {
   title: "Noo DiDa | Personal Portfolio",
@@ -53,10 +47,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${isInterFont.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50/90`}
+        className="font-[var(--font-sf-pro-text),ui-sans-serif,system-ui,-apple-system,sans-serif] bg-white-canvas text-jet-black relative pt-28 sm:pt-36 dark:bg-[#1d1d1f] dark:text-white/90"
       >
-        <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]" />
-        <div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]" />
         <LanguageProvider>
           <ActiveSectionContextProvider>
             <ThemeProvider
@@ -65,15 +57,13 @@ export default function RootLayout({
               enableSystem={true}
               disableTransitionOnChange
             >
+              <CursorGlow />
+              <CommandPalette />
               <Header />
               {children}
               <Footer />
               <Toaster position="top-right" />
-              <div className="fixed bottom-5 right-5 flex flex-col gap-3 z-[998]">
-                <ScrollToTop />
-                <LanguageSwitcher />
-                <ThemeSwitch />
-              </div>
+              <FixedControls />
             </ThemeProvider>
           </ActiveSectionContextProvider>
         </LanguageProvider>

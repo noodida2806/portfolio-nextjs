@@ -32,9 +32,9 @@ const Footer = () => {
     >
       <div className="max-w-[55rem] mx-auto">
         {/* Divider */}
-        <div className="mb-8 h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-white/10 to-transparent" />
+        <div className="mb-8 h-px bg-gradient-to-r from-transparent via-silver-whisper dark:via-white/10 to-transparent" />
 
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
           {/* Nav links */}
           <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2">
             {links.map((link) => (
@@ -45,7 +45,7 @@ const Footer = () => {
                   setActiveSection(link.name);
                   setTimeOfLastClick(Date.now());
                 }}
-                className="text-sm text-gray-500 dark:text-white/40 hover:text-violet-600 dark:hover:text-violet-400 transition-colors duration-200"
+                className="text-sm text-medium-gray dark:text-white/50 hover:text-ocean-blue dark:hover:text-ocean-blue transition-colors duration-200"
               >
                 {t.nav[navKeyMap[link.name]]}
               </Link>
@@ -59,7 +59,7 @@ const Footer = () => {
                 href="https://github.com/noodida2806"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 dark:text-white/40 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
+                className="text-medium-gray dark:text-white/50 hover:text-jet-black dark:hover:text-white transition-colors duration-200"
                 aria-label="GitHub"
               >
                 <FaGithub className="text-lg" />
@@ -68,14 +68,19 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/dai-ngo-dinh-55a9a6203/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 dark:text-white/40 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                className="text-medium-gray dark:text-white/50 hover:text-ocean-blue dark:hover:text-ocean-blue transition-colors duration-200"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="text-lg" />
               </a>
             </div>
-            <small className="text-xs text-gray-400 dark:text-white/30">
+            <small className="text-xs text-medium-gray dark:text-white/30">
               &copy; {currentYear} {t.footer.copyright}
+            </small>
+            <small className="text-[11px] text-medium-gray dark:text-white/25 flex items-center gap-1">
+              Press
+              <kbd className="px-1.5 py-0.5 rounded border border-frost-gray dark:border-white/15 bg-light-mist dark:bg-white/8 font-sans">⌘K</kbd>
+              to navigate
             </small>
           </div>
         </div>

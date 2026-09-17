@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react";
+import React, { useState } from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
@@ -19,7 +19,11 @@ const Contact = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
+    watch,
   } = useForm()
+
+  const messageValue = watch("message", "")
+  const [justSent, setJustSent] = useState(false);
 
   const onSubmit = async (data: any) => {
     const { data: response, error } = await sendEmail(data);
@@ -29,6 +33,8 @@ const Contact = () => {
     }
     toast.success(t.contact.successToast);
     reset();
+    setJustSent(true);
+    setTimeout(() => setJustSent(false), 2500);
   }
 
   return (
@@ -43,9 +49,9 @@ const Contact = () => {
     >
       <SectionHeading>{t.contact.heading}</SectionHeading>
 
-      <p className="text-center text-gray-700 dark:text-white/80 mb-8">
+      <p className="text-center text-steel-gray dark:text-white/60 mb-8">
         {t.contact.description}{" "}
-        <a className="font-semibold text-violet-600 dark:text-blue-400 hover:underline transition" href="mailto:ngodinhdai77@gmail.com">
+        <a className="font-semibold text-ocean-blue hover:text-sky-link transition-colors duration-200" href="mailto:ngodinhdai77@gmail.com">
           ngodinhdai77@gmail.com
         </a>{" "}
         {t.contact.descriptionSuffix}
@@ -59,12 +65,16 @@ const Contact = () => {
           transition={{ delay: 0.1 }}
           viewport={{ once: true }}
         >
-          <label className="text-sm font-semibold text-gray-700 dark:text-white/80">
+          <label className="text-sm font-semibold text-steel-gray dark:text-white/80">
             {t.contact.emailLabel}
           </label>
           <input
             {...register("senderEmail", { required: true, maxLength: 500 })}
-            className="h-12 px-4 rounded-xl border-2 border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-white/30 focus:border-violet-500 dark:focus:border-violet-400 focus:outline-none focus:shadow-[0_0_0_4px_rgba(124,58,237,0.1)] dark:focus:shadow-[0_0_0_4px_rgba(124,58,237,0.2)] transition-all duration-200"
+            className={`h-12 px-4 rounded-xl border bg-white-canvas dark:bg-white/5 text-jet-black dark:text-white placeholder-medium-gray dark:placeholder-white/30 focus:outline-none transition-all duration-200 ${
+              errors.senderEmail
+                ? "border-red-400 focus:shadow-[0_0_0_4px_rgba(248,113,113,0.12)]"
+                : "border-frost-gray dark:border-white/8 focus:border-ocean-blue focus:shadow-[0_0_0_4px_rgba(0,113,227,0.12)]"
+            }`}
             name="senderEmail"
             type="email"
             required
@@ -83,12 +93,27 @@ const Contact = () => {
           transition={{ delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <label className="text-sm font-semibold text-gray-700 dark:text-white/80">
-            {t.contact.messageLabel}
-          </label>
+          <div className="flex items-center justify-between">
+            <label className="text-sm font-semibold text-steel-gray dark:text-white/80">
+              {t.contact.messageLabel}
+            </label>
+            <span className={`text-xs transition-colors duration-200 ${
+              (messageValue?.length ?? 0) > 4500
+                ? "text-red-400"
+                : (messageValue?.length ?? 0) > 3000
+                ? "text-amber-400"
+                : "text-medium-gray dark:text-white/30"
+            }`}>
+              {messageValue?.length ?? 0} / 5000
+            </span>
+          </div>
           <textarea
             {...register("message", { required: true, maxLength: 5000 })}
-            className="h-40 px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-white/30 focus:border-violet-500 dark:focus:border-violet-400 focus:outline-none focus:shadow-[0_0_0_4px_rgba(124,58,237,0.1)] dark:focus:shadow-[0_0_0_4px_rgba(124,58,237,0.2)] transition-all duration-200 resize-none"
+            className={`h-40 px-4 py-3 rounded-xl border bg-white-canvas dark:bg-white/5 text-jet-black dark:text-white placeholder-medium-gray dark:placeholder-white/30 focus:outline-none transition-all duration-200 resize-none max-h-64 ${
+              errors.message
+                ? "border-red-400 focus:shadow-[0_0_0_4px_rgba(248,113,113,0.12)]"
+                : "border-frost-gray dark:border-white/8 focus:border-ocean-blue focus:shadow-[0_0_0_4px_rgba(0,113,227,0.12)]"
+            }`}
             name="message"
             placeholder={t.contact.messagePlaceholder}
             required
@@ -106,7 +131,7 @@ const Contact = () => {
           transition={{ delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <SubmitBtn pending={isSubmitting} label={t.contact.submitBtn} />
+          <SubmitBtn pending={isSubmitting} success={justSent} label={t.contact.submitBtn} />
         </motion.div>
       </form>
     </motion.section>

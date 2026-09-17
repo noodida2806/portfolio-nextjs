@@ -1,20 +1,25 @@
 import React from "react";
-import { FaPaperPlane } from "react-icons/fa";
+import { FaCheck, FaPaperPlane } from "react-icons/fa";
 
 type Props = {
   pending: boolean;
+  success?: boolean;
   label?: string;
 }
 
-const SubmitBtn = ({ pending, label = "Submit" }: Props) => {
+const SubmitBtn = ({ pending, success = false, label = "Submit" }: Props) => {
   return (
     <button
       type="submit"
-      className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105  disabled:scale-100 disabled:bg-gray/65"
+      className={`group flex items-center justify-center gap-2 h-[3rem] w-[8rem] text-white rounded-full outline-none transition-all active:scale-95 disabled:scale-100 disabled:opacity-60 ${
+        success ? "bg-verdant-green" : "bg-ocean-blue hover:bg-sky-link"
+      }`}
       disabled={pending}
     >
       {pending ? (
         <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white" />
+      ) : success ? (
+        <FaCheck className="text-base" />
       ) : (
         <>
           {label}{" "}

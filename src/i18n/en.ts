@@ -11,6 +11,7 @@ const en = {
 
   // Intro / Hero
   intro: {
+    badge: "Available for freelance work",
     greeting: "Hello, I'm Noo DiDa",
     roles: ["A Web Developer", "A Mobile Developer"],
     description: {
@@ -28,6 +29,11 @@ const en = {
   // About
   about: {
     heading: "About me",
+    stats: [
+      { value: "3+", label: "Years Experience" },
+      { value: "4+", label: "Projects Shipped" },
+      { value: "25+", label: "Technologies" },
+    ],
     items: [
       {
         icon: "\u{1F4BB}",
@@ -72,17 +78,17 @@ const en = {
       {
         title: "Recruitment Website",
         description:
-          "Build a recruitment website with a user-friendly interface for job seekers and employers, featuring job listings, applications, and company profiles.",
+          "A two-sided recruitment platform connecting job seekers and employers, with job listings, application tracking, and company profile pages. Built the front end in React + Redux and integrated a NestJS/MongoDB API.",
       },
       {
         title: "Blog Website",
         description:
-          "Developed a blog website with a clean design, allowing users to read and comment on articles, and an admin panel for content management.",
+          "A publishing platform with rich-text articles, threaded comments, and an admin panel for content moderation. Built with Next.js and a NestJS/PostgreSQL backend, using Zustand for client state.",
       },
       {
         title: "E-commerce Website",
         description:
-          "Created an e-commerce website with product listings, a shopping cart, and a secure checkout process, enhancing the online shopping experience.",
+          "An online store with product catalog, cart, and a secure multi-step checkout flow. Built with Next.js and a NestJS/PostgreSQL backend, focused on a fast, friction-free purchase path.",
       },
     ],
   },

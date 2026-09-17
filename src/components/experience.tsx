@@ -32,37 +32,39 @@ const Experience = () => {
             <VerticalTimelineElement
               contentStyle={{
                 background:
-                  theme === "light" ? "#ffffff" : "rgba(255, 255, 255, 0.03)",
-                boxShadow: theme === "light"
-                  ? "0 0 0 1px #e5e7eb, 0 4px 16px rgba(0,0,0,0.06)"
-                  : "0 0 0 1px rgba(255,255,255,0.08), 0 4px 16px rgba(0,0,0,0.2)",
-                border: "none",
+                  theme === "light" ? "#f5f5f7" : "rgba(255, 255, 255, 0.04)",
+                boxShadow: "none",
+                border: theme === "light"
+                  ? "1px solid #e8e8ed"
+                  : "1px solid rgba(255,255,255,0.08)",
                 textAlign: "left",
                 padding: "1.5rem 2rem",
-                borderRadius: "1rem",
+                borderRadius: "28px",
               }}
               contentArrowStyle={{
                 borderRight:
                   theme === "light"
-                    ? "0.4rem solid #e5e7eb"
+                    ? "0.4rem solid #e8e8ed"
                     : "0.4rem solid rgba(255, 255, 255, 0.08)",
               }}
               date={item.date}
               icon={item.icon}
               iconStyle={{
-                background: "linear-gradient(135deg, #7c3aed, #3b82f6)",
+                background: "#0071e3",
                 color: "white",
                 fontSize: "1.2rem",
-                boxShadow: "0 0 0 3px rgba(124,58,237,0.3)",
+                boxShadow: theme === "light"
+                  ? "0 0 0 3px rgba(0,113,227,0.2), 0 4px 12px rgba(0,113,227,0.25)"
+                  : "0 0 0 3px rgba(0,113,227,0.4), 0 4px 16px rgba(0,113,227,0.35)",
               }}
             >
-              <h3 className="font-semibold capitalize text-gray-900 dark:text-white">
+              <h3 className="font-semibold capitalize text-jet-black dark:text-white">
                 {t.experience.items[index]?.title ?? item.title}
               </h3>
-              <p className="font-normal !mt-0.5 text-sm text-violet-600 dark:text-violet-400">
+              <p className="font-normal !mt-0.5 text-sm text-ocean-blue">
                 {t.experience.items[index]?.location ?? item.location}
               </p>
-              <p className="!mt-2 !font-normal text-sm text-gray-600 dark:text-white/70 leading-relaxed">
+              <p className="!mt-2 !font-normal text-sm text-steel-gray dark:text-white/60 leading-relaxed">
                 {t.experience.items[index]?.description ?? item.description}
               </p>
             </VerticalTimelineElement>

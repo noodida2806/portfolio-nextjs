@@ -9,7 +9,7 @@ const SectionHeading = ({ children }: Props) => {
   return (
     <div className="mb-12 text-center">
       <motion.h2
-        className="text-4xl font-bold capitalize mb-4 bg-gradient-to-r from-violet-600 to-blue-500 bg-clip-text text-transparent inline-block"
+        className="text-4xl font-semibold capitalize mb-4 text-jet-black dark:text-white tracking-tight inline-block"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -18,7 +18,7 @@ const SectionHeading = ({ children }: Props) => {
         {children}
       </motion.h2>
       <motion.div
-        className="h-1 w-16 mx-auto bg-gradient-to-r from-violet-600 to-blue-500 rounded-full"
+        className="h-px w-12 mx-auto bg-silver-whisper dark:bg-white/20"
         initial={{ scaleX: 0, opacity: 0 }}
         whileInView={{ scaleX: 1, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}

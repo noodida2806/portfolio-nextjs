@@ -26,12 +26,14 @@ const Projects = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:max-w-[56rem] mx-auto">
         {projectsData.map((project, index) => (
           <Fragment key={index}>
-            <ProjectItem
-              {...project}
-              translatedTitle={t.projects.items[index]?.title ?? project.title}
-              translatedDescription={t.projects.items[index]?.description ?? project.description}
-              viewProjectLabel={t.projects.viewProject}
-            />
+            <div className={"featured" in project && project.featured ? "lg:col-span-2" : undefined}>
+              <ProjectItem
+                {...project}
+                translatedTitle={t.projects.items[index]?.title ?? project.title}
+                translatedDescription={t.projects.items[index]?.description ?? project.description}
+                viewProjectLabel={t.projects.viewProject}
+              />
+            </div>
           </Fragment>
         ))}
       </div>
