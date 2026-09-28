@@ -1,11 +1,3 @@
-import type { MouseEvent } from "react";
-
-export const handleSpotlightMove = (e: MouseEvent<HTMLElement>) => {
-  const rect = e.currentTarget.getBoundingClientRect();
-  e.currentTarget.style.setProperty("--x", `${e.clientX - rect.left}px`);
-  e.currentTarget.style.setProperty("--y", `${e.clientY - rect.top}px`);
-};
-
 export const validateString = (
   value: unknown,
   maxLength: number

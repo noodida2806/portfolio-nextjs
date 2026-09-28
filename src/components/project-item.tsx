@@ -6,7 +6,6 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { FiExternalLink, FiImage } from "react-icons/fi";
-import { handleSpotlightMove } from "@/lib/utils";
 
 type Props = (typeof projectsData)[number] & {
   translatedTitle: string;
@@ -42,8 +41,7 @@ const ProjectItem = ({
     >
       <Link href={link} target="_blank" rel="noopener noreferrer" className="group block h-full">
         <div
-          onMouseMove={handleSpotlightMove}
-          className={`spotlight-card h-full flex ${isFeatured ? "flex-col md:flex-row" : "flex-col"} bg-light-mist dark:bg-white/5 border border-frost-gray dark:border-white/8 rounded-[28px] overflow-hidden hover:border-silver-whisper dark:hover:border-white/20 transition-all duration-300 hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-black/30`}
+          className={`h-full flex ${isFeatured ? "flex-col md:flex-row" : "flex-col"} bg-light-mist dark:bg-white/5 border border-frost-gray dark:border-white/8 rounded-[28px] overflow-hidden hover:border-silver-whisper dark:hover:border-white/20 transition-all duration-300 hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-black/30`}
         >
           {/* Image */}
           <div className={`relative z-[2] overflow-hidden bg-frost-gray dark:bg-white/5 ${isFeatured ? "h-56 md:h-auto md:w-1/2" : "h-48 sm:h-56 lg:h-64"}`}>

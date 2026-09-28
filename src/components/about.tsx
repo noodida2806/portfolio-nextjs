@@ -5,7 +5,6 @@ import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import { useLanguage } from "@/context/language-context";
-import { handleSpotlightMove } from "@/lib/utils";
 
 const About = () => {
   const { ref } = useSectionInView("About");
@@ -46,8 +45,7 @@ const About = () => {
         {t.about.items.map((item, index) => (
           <motion.div
             key={index}
-            onMouseMove={handleSpotlightMove}
-            className="spotlight-card bg-light-mist dark:bg-white/5 p-6 rounded-[28px] border border-frost-gray dark:border-white/12 transition-all duration-300 cursor-default hover:shadow-lg hover:shadow-black/5 dark:hover:shadow-black/20"
+            className="bg-light-mist dark:bg-white/5 p-6 rounded-[28px] border border-frost-gray dark:border-white/12 transition-all duration-300 cursor-default hover:shadow-lg hover:shadow-black/5 dark:hover:shadow-black/20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ y: -4 }}

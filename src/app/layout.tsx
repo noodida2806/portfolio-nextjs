@@ -7,7 +7,7 @@ import { Toaster } from "react-hot-toast";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import FixedControls from "@/components/fixed-controls";
-import CursorGlow from "@/components/cursor-glow";
+import CursorParticles from "@/components/cursor-particles";
 import CommandPalette from "@/components/command-palette";
 
 export const metadata: Metadata = {
@@ -57,7 +57,7 @@ export default function RootLayout({
               enableSystem={true}
               disableTransitionOnChange
             >
-              <CursorGlow />
+              <CursorParticles />
               <CommandPalette />
               <Header />
               {children}
